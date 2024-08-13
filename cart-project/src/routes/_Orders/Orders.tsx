@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Orders } from "../../Pages/Orders/Orders";
 import { getOrders } from "../../Api/Api";
-
 export const OrdersQueryOptions = () => {
   return { queryKey: ["orders"], queryFn: () => getOrders() };
 };

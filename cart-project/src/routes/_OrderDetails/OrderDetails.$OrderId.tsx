@@ -10,7 +10,9 @@ export const OrderDetailsQueryOptions = (OrderId: string) => {
   });
 };
 
-export const Route = createFileRoute("/_OrderDetails/OrderDetails/$OrderId")({
+export const Route = createFileRoute(
+  "/_OrderDetails/OrderDetails/$OrderId"
+)({
   component: OrderDetails,
   loader: ({ context: { queryClient }, params: { OrderId } }) => {
     return queryClient.ensureQueryData(OrderDetailsQueryOptions(OrderId));
