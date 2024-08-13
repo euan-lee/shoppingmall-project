@@ -9,7 +9,7 @@ import { CartRightLayout } from "./CartRight";
 import { CartTopLayout } from "./CartTop";
 import { CartBodyLayout } from "./CartBody";
 import Flex from "../../ComponentsPrototype/Layout/Flex";
-import { ErrorBoundary } from "react-error-boundary";
+import { CatchBoundary } from "@tanstack/react-router";
 export const CartView = () => {
   return (
     <>
@@ -18,21 +18,27 @@ export const CartView = () => {
       </CartTopLayout>
       <CartBodyLayout>
         <CartLeftLayout>
-          <ErrorBoundary fallback={<div>left section error</div>}>
+          <CatchBoundary
+            getResetKey={() => "reset"}
+            onCatch={(error) => console.error(error)}>
             <Flex className="flex flex-row justify-between ">
-              <ErrorBoundary fallback={<div>ToggleAllCheckbox error</div>}>
+              <CatchBoundary
+                getResetKey={() => "reset"}
+                onCatch={(error) => console.error(error)}>
                 <ToggleAllCheckbox />
-              </ErrorBoundary>
+              </CatchBoundary>
               <CartResetButton />
             </Flex>
             <CartItemSummary />
             <CartItemsList />
-          </ErrorBoundary>
+          </CatchBoundary>
         </CartLeftLayout>
         <CartRightLayout>
-          <ErrorBoundary fallback={<div>right section error</div>}>
+          <CatchBoundary
+            getResetKey={() => "reset"}
+            onCatch={(error) => console.error(error)}>
             <OrderSummary />
-          </ErrorBoundary>
+          </CatchBoundary>
         </CartRightLayout>
       </CartBodyLayout>
     </>
