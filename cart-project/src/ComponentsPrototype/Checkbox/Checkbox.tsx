@@ -27,9 +27,9 @@ const CheckBox = ({
     <label className="pl-2">
       <input
         className="appearance:none rounded-sm w-8 h-8 cursor-pointer 
-            focus:outline-none appearance-none 
+            focus:outline-none 
             cursor:pointer checked:bg-customTeal
-            after:content-['✔'] w-8 h-8 text-xs text-[#ad7373] flex justify-center items-center appearance-none
+            after:content-['✔'] text-xs text-[#ad7373] flex justify-center items-center
           "
         type="checkbox"
         checked={check}
