@@ -15,7 +15,6 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Route as rootRoute } from './routes/__root'
 import { Route as OrdersRouteImport } from './routes/_Orders/route'
 import { Route as OrderDetailsRouteImport } from './routes/_OrderDetails/route'
-import { Route as ProductsRouteImport } from './routes/Products/route'
 import { Route as OrderPaymentRouteImport } from './routes/OrderPayment/route'
 import { Route as OrdersOrdersImport } from './routes/_Orders/Orders'
 import { Route as CartCartImport } from './routes/_Cart/Cart'
@@ -35,11 +34,6 @@ const OrdersRouteRoute = OrdersRouteImport.update({
 
 const OrderDetailsRouteRoute = OrderDetailsRouteImport.update({
   id: '/_OrderDetails',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const ProductsRouteRoute = ProductsRouteImport.update({
-  path: '/Products',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -93,13 +87,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof OrderPaymentRouteImport
       parentRoute: typeof rootRoute
     }
-    '/Products': {
-      id: '/Products'
-      path: '/Products'
-      fullPath: '/Products'
-      preLoaderRoute: typeof ProductsRouteImport
-      parentRoute: typeof rootRoute
-    }
     '/_OrderDetails': {
       id: '/_OrderDetails'
       path: ''
@@ -150,7 +137,6 @@ declare module '@tanstack/react-router' {
 export const routeTree = rootRoute.addChildren({
   IndexLazyRoute,
   OrderPaymentRouteRoute,
-  ProductsRouteRoute,
   OrderDetailsRouteRoute: OrderDetailsRouteRoute.addChildren({
     OrderDetailsOrderDetailsOrderIdRoute,
   }),
@@ -169,7 +155,6 @@ export const routeTree = rootRoute.addChildren({
       "children": [
         "/",
         "/OrderPayment",
-        "/Products",
         "/_OrderDetails",
         "/_Orders",
         "/_Cart/Cart",
@@ -181,9 +166,6 @@ export const routeTree = rootRoute.addChildren({
     },
     "/OrderPayment": {
       "filePath": "OrderPayment/route.tsx"
-    },
-    "/Products": {
-      "filePath": "Products/route.tsx"
     },
     "/_OrderDetails": {
       "filePath": "_OrderDetails/route.tsx",

@@ -11,7 +11,7 @@ const Header = () => {
         </Flex>
         <Flex className="flex justify-around w-full h-20 items-center bg-teal-500">
           <Flex className="flex-center">
-            <Link to="/Products">
+            <Link to="/">
               <Text
                 text="NEXT STEP"
                 className="text-4xl font-black text-center text-white"
