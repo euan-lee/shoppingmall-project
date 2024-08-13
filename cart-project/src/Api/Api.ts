@@ -10,7 +10,7 @@ export const getProducts = async ({
 }) => {
   try {
     const data = await AxiosInstance.get(URLS.getProducts({ page, limit }));
-    console.log("요청확인");
+
     return data.data;
   } catch (error) {
     console.log(error);
@@ -37,7 +37,6 @@ export const postProducts = async ({ price, name, imageUrl }: products) => {
 
 export const getProduct = async (id: string) => {
   try {
-    console.log("? 이거 되는거야? axios 확인");
     const response = await AxiosInstance.get(URLS.getProduct(id));
     return response.data;
   } catch (error) {

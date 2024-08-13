@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useCartItemsToggleMutation } from "../../Hooks/MutateCartItem/CartMutation";
-import CheckBox from "../../ComponentsPrototype/Checkbox/CheckBox";
+import CheckBox from "../../ComponentsPrototype/CheckBox/CheckBox";
 
 export const ToggleAllCheckbox = () => {
   const [reset, setReset] = useState(false);
