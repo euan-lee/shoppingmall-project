@@ -6,6 +6,5 @@ export const OrderPayment = () => {
   const {
     data: { orders },
   } = useSuspenseQuery(OrderPaymentQueryOptions());
-  console.log("orders", orders);
   return <OrderPaymentView orderDetails={orders} />;
 };
