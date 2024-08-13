@@ -2,6 +2,7 @@ import { OrderProduct } from "../../Types/types";
 import Text from "../../ComponentsPrototype/Text/Text";
 import Box from "../../ComponentsPrototype/Layout/Box";
 import Flex from "../../ComponentsPrototype/Layout/Flex";
+import { CatchBoundary } from "@tanstack/react-router";
 
 export const OrderDetailFooter = ({ orders }: { orders: OrderProduct[] }) => {
   return (
@@ -13,14 +14,18 @@ export const OrderDetailFooter = ({ orders }: { orders: OrderProduct[] }) => {
         </Flex>
         <Flex className="flex justify-between mt-14">
           <Text text={"총 결제금액"} className=" text-2xl" />
-          <Text
-            className=" text-2xl"
-            text={`₩${orders
-              .reduce((acc: number, order: OrderProduct) => {
-                return acc + Number(order.price) * Number(order.quantity);
-              }, 0)
-              .toLocaleString()}`}
-          />
+          <CatchBoundary
+            getResetKey={() => "reset"}
+            onCatch={(error) => console.error(error)}>
+            <Text
+              className=" text-2xl"
+              text={`₩${orders
+                .reduce((acc: number, order: OrderProduct) => {
+                  return acc + Number(order.price) * Number(order.quantity);
+                }, 0)
+                .toLocaleString()}`}
+            />
+          </CatchBoundary>
         </Flex>
       </Box>
     </Flex>
