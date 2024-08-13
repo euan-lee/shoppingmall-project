@@ -5,6 +5,7 @@ import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen.ts";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import "./index.css";
+import { LoadingSpinner } from "./Components/LoadingSpinner/LoadingSpinner.tsx";
 
 export const queryClient = new QueryClient();
 
@@ -15,6 +16,7 @@ export const router = createRouter({
   },
   defaultPreload: "intent",
   defaultPreloadStaleTime: 0,
+  defaultPendingComponent: LoadingSpinner,
 });
 
 declare module "@tanstack/react-router" {
