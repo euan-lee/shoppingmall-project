@@ -29,7 +29,7 @@ const CheckBox = ({
         className="appearance:none rounded-sm w-8 h-8 cursor-pointer 
             focus:outline-none 
             cursor:pointer checked:bg-customTeal
-            after:content-['✔'] text-xs text-[#ad7373] flex justify-center items-center
+            after:content-[] first-letter:text-xs text-[#ad7373] flex justify-center items-center
           "
         type="checkbox"
         checked={check}
