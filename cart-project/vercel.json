@@ -1,3 +1,9 @@
 {
-  "routes": [{ "handle": "filesystem" }, { "src": "/", "dest": "/products" }]
+  "routes": [
+    { "handle": "filesystem" },
+    {
+      "src": "/",
+      "dest": "https://shoppingmall-project-d8h1.vercel.app/Products"
+    }
+  ]
 }
