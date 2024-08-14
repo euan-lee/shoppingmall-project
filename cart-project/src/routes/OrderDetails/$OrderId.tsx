@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { OrderDetails } from "../../Pages/OrderDetails/OrderDetails";
 import { getOrder } from "../../Api/Api";
 import { queryOptions } from "@tanstack/react-query";
 
@@ -10,8 +9,7 @@ export const OrderDetailsQueryOptions = (OrderId: string) => {
   });
 };
 
-export const Route = createFileRoute("/_OrderDetails/OrderDetails/$OrderId")({
-  component: OrderDetails,
+export const Route = createFileRoute("/OrderDetails/$OrderId")({
   loader: ({ context: { queryClient }, params: { OrderId } }) => {
     return queryClient.ensureQueryData(OrderDetailsQueryOptions(OrderId));
   },

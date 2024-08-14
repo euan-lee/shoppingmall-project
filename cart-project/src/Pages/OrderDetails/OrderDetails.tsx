@@ -1,6 +1,6 @@
-import { OrderDetailsQueryOptions } from "../../routes/_OrderDetails/OrderDetails.$OrderId";
+import { OrderDetailsQueryOptions } from "../../routes/OrderDetails/$OrderId";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { Route } from "../../routes/_OrderDetails/OrderDetails.$OrderId";
+import { Route } from "../../routes/OrderDetails/$OrderId";
 import { OrderDetailsHeader } from "./ OrderDetailsHeader";
 import { OrderDetailsList } from "./OrderDetailsList";
 import { OrderDetailFooter } from "./OrderDetailFooter";
