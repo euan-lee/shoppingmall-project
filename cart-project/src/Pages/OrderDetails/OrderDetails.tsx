@@ -1,6 +1,6 @@
 import { OrderDetailsQueryOptions } from "../../Api/QueryOptions/QueryOptions";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { Route } from "../../routes/_OrderDetails/OrderDetails/$OrderId.lazy";
+import { Route } from "../../routes/_OrderDetails/OrderDetails/$OrderId";
 import { OrderDetailsList } from "./OrderDetailsList";
 import { OrderDetailFooter } from "./OrderDetailFooter";
 import { CatchBoundary } from "@tanstack/react-router";
