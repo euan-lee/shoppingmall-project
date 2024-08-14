@@ -46,9 +46,7 @@ const CartRouteRoute = CartRouteImport.update({
 const OrderPaymentRouteRoute = OrderPaymentRouteImport.update({
   path: '/OrderPayment',
   getParentRoute: () => rootRoute,
-} as any).lazy(() =>
-  import('./routes/OrderPayment/route.lazy').then((d) => d.Route),
-)
+} as any)
 
 const IndexLazyRoute = IndexLazyImport.update({
   path: '/',
@@ -58,9 +56,7 @@ const IndexLazyRoute = IndexLazyImport.update({
 const ProductsParamsIdRoute = ProductsParamsIdImport.update({
   path: '/Products/$ParamsId',
   getParentRoute: () => rootRoute,
-} as any).lazy(() =>
-  import('./routes/Products/$ParamsId.lazy').then((d) => d.Route),
-)
+} as any)
 
 const OrdersOrdersRouteRoute = OrdersOrdersRouteImport.update({
   path: '/Orders',
@@ -80,11 +76,7 @@ const OrderDetailsOrderDetailsOrderIdRoute =
   OrderDetailsOrderDetailsOrderIdImport.update({
     path: '/OrderDetails/$OrderId',
     getParentRoute: () => OrderDetailsRouteRoute,
-  } as any).lazy(() =>
-    import('./routes/_OrderDetails/OrderDetails/$OrderId.lazy').then(
-      (d) => d.Route,
-    ),
-  )
+  } as any)
 
 // Populate the FileRoutesByPath interface
 
