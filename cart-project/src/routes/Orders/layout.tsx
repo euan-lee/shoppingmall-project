@@ -1,7 +1,7 @@
 import { Outlet, createFileRoute } from "@tanstack/react-router";
 import Flex from "../../ComponentsPrototype/Layout/Flex";
 import Box from "../../ComponentsPrototype/Layout/Box";
-export const Route = createFileRoute("/_Orders")({
+export const Route = createFileRoute("/Orders/layout")({
   component: () => (
     <Box className="bg-gray-100">
       <Flex className="gap-5 p-12 px-60 ">

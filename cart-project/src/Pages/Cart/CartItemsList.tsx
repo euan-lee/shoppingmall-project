@@ -1,4 +1,4 @@
-import { CartQueryOptions } from "../../routes/_Cart/Cart";
+import { CartQueryOptions } from "../../routes/Cart/route";
 import { useQuery } from "@tanstack/react-query";
 import CartItem from "./CartItem";
 import { CartItemWithCheck } from "../../Types/types";

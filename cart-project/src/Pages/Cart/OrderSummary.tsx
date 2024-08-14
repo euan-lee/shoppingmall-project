@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { CartQueryOptions } from "../../routes/_Cart/Cart";
+import { CartQueryOptions } from "../../routes/Cart/route";
 import { CartItemWithCheck } from "../../Types/types";
 import { useOrderConfirmMutation } from "../../Hooks/MutateCartItem/orderConfirm";
 import { useCartItemDeleteAllMutation } from "../../Hooks/MutateCartItem/CartItemsDeleteAllMutation";

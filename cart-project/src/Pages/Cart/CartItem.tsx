@@ -1,6 +1,6 @@
 import Image from "../../ComponentsPrototype/Image/Image";
 import Text from "../../ComponentsPrototype/Text/Text";
-import CheckBox from "../../ComponentsPrototype/Checkbox/CheckBox";
+import CheckBox from "../../ComponentsPrototype/CheckBox/CheckBox";
 import Button from "../../ComponentsPrototype/Button/Button";
 import { useCheckMutation } from "../../Hooks/MutateCartItem/CheckMutation";
 import { CartItemWithCheck } from "../../Types/types";
