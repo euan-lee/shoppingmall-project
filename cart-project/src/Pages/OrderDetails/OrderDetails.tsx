@@ -1,7 +1,6 @@
-import { OrderDetailsQueryOptions } from "../../routes/OrderDetails/$OrderId";
+import { OrderDetailsQueryOptions } from "../../Api/QueryOptions/QueryOptions";
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { Route } from "../../routes/OrderDetails/$OrderId";
-import { OrderDetailsHeader } from "./ OrderDetailsHeader";
+import { Route } from "../../routes/_OrderDetails/OrderDetails/$OrderId.lazy";
 import { OrderDetailsList } from "./OrderDetailsList";
 import { OrderDetailFooter } from "./OrderDetailFooter";
 import { CatchBoundary } from "@tanstack/react-router";
@@ -12,14 +11,11 @@ export const OrderDetails = () => {
   } = useSuspenseQuery(OrderDetailsQueryOptions(OrderId));
 
   return (
-    <div className="gap-5 p-12 px-60 ">
-      <OrderDetailsHeader />
-      <CatchBoundary
-        getResetKey={() => "reset"}
-        onCatch={(error) => console.error(error)}>
-        <OrderDetailsList orders={orders} OrderId={Number(OrderId)} />
-        <OrderDetailFooter orders={orders} />
-      </CatchBoundary>
-    </div>
+    <CatchBoundary
+      getResetKey={() => "reset"}
+      onCatch={(error) => console.error(error)}>
+      <OrderDetailsList orders={orders} OrderId={Number(OrderId)} />
+      <OrderDetailFooter orders={orders} />
+    </CatchBoundary>
   );
 };

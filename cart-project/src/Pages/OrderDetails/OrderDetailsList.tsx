@@ -17,9 +17,7 @@ export const OrderDetailsList = ({
         </Box>
         <Box className="w-full">
           {orders.map((order: OrderProduct) => (
-            <>
-              <OrderItem order={order} key={order.id} />
-            </>
+            <OrderItem order={order} key={order.id} />
           ))}
         </Box>
       </Flex>

@@ -30,3 +30,10 @@ export const getQueryOptions = ({
 export const OrdersQueryOptions = () => {
   return { queryKey: ["orders"], queryFn: () => getOrders() };
 };
+
+export const OrderDetailsQueryOptions = (OrderId: string) => {
+  return queryOptions({
+    queryKey: ["OrderDetails", { OrderId }],
+    queryFn: () => getOrder(OrderId),
+  });
+};
