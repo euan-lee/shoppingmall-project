@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { OrdersQueryOptions } from "../../routes/Orders/Orders";
+import { OrdersQueryOptions } from "../../Api/QueryOptions/QueryOptions";
 import { OrderListHeader } from "./OrderListHeader";
 import { OrdersList } from "./Orderslist";
 

@@ -1,4 +1,4 @@
-import { getOrder, getProduct, getProducts } from "../../Api/Api";
+import { getOrder, getProduct, getProducts, getOrders } from "../../Api/Api";
 import { queryOptions } from "@tanstack/react-query";
 
 export const OrderPaymentQueryOptions = () =>
@@ -25,4 +25,8 @@ export const getQueryOptions = ({
     queryKey: ["products", page],
     queryFn: () => getProducts({ page, limit }),
   });
+};
+
+export const OrdersQueryOptions = () => {
+  return { queryKey: ["orders"], queryFn: () => getOrders() };
 };

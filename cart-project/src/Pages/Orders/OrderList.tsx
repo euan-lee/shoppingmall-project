@@ -29,7 +29,7 @@ export const OrderList = ({ orderlist }: { orderlist: order }) => {
         </Flex>
       </Box>
       {orderlist.orderDetails.map((order: orderDetails) => (
-        <OrderItem order={order} />
+        <OrderItem order={order} key={order.id} />
       ))}
     </Flex>
   );
