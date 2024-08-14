@@ -1,5 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Cart } from "../../Pages/Cart/Cart";
 import { getCarts } from "../../Api/Api";
 import { queryOptions } from "@tanstack/react-query";
 
@@ -9,12 +8,8 @@ export const CartQueryOptions = () =>
     queryFn: () => getCarts(),
   });
 
-export const Route = createFileRoute("/_Cart/Cart")({
-  component: Cart,
+export const Route = createFileRoute("/Cart")({
   loader: ({ context: { queryClient } }) => {
     return queryClient.ensureQueryData(CartQueryOptions());
-  },
-  notFoundComponent: () => {
-    return <p>cart page doesn't exist!</p>;
   },
 });

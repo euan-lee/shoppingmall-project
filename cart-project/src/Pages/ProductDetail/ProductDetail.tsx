@@ -1,5 +1,5 @@
 import { useSuspenseQuery } from "@tanstack/react-query";
-import { Route } from "../../routes/_ProductDetail/Products.$ParamsId";
+import { Route } from "../../routes/Products/$ParamsId";
 import { ProductDetailCard } from "../../Components/ProductCard/ProductDetailCard";
 import { ProductDetailQueryOptions } from "../../Api/QueryOptions/QueryOptions";
 import { Suspense } from "react";
