@@ -1,4 +1,10 @@
-import { getOrder, getProduct, getProducts, getOrders } from "../../Api/Api";
+import {
+  getOrder,
+  getProduct,
+  getProducts,
+  getOrders,
+  getCarts,
+} from "../../Api/Api";
 import { queryOptions } from "@tanstack/react-query";
 
 export const OrderPaymentQueryOptions = () =>
@@ -37,3 +43,9 @@ export const OrderDetailsQueryOptions = (OrderId: string) => {
     queryFn: () => getOrder(OrderId),
   });
 };
+
+export const CartQueryOptions = () =>
+  queryOptions({
+    queryKey: ["Cart"],
+    queryFn: () => getCarts(),
+  });

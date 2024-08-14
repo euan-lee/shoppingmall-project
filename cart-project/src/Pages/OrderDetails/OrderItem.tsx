@@ -18,9 +18,9 @@ export const OrderItem = ({ order }: { order: OrderProduct }) => {
             <Text text={`${name}`} />
           </Flex>
           <Flex className="flex flex-row gap-3.5">
-            <Text text={`${price}`} className="text-gray-500"/>
-            <Text text={"/"} className="text-gray-500"/>
-            <Text text={`수량:${quantity}개`} className="text-gray-500"/>
+            <Text text={`${price}`} className="text-gray-500" />
+            <Text text={"/"} className="text-gray-500" />
+            <Text text={`수량:${quantity}개`} className="text-gray-500" />
           </Flex>
         </Flex>
       </Flex>

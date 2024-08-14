@@ -15,10 +15,11 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Route as rootRoute } from './routes/__root'
 import { Route as OrdersRouteImport } from './routes/_Orders/route'
 import { Route as OrderDetailsRouteImport } from './routes/_OrderDetails/route'
+import { Route as CartRouteImport } from './routes/_Cart/route'
 import { Route as OrderPaymentRouteImport } from './routes/OrderPayment/route'
-import { Route as CartRouteImport } from './routes/Cart/route'
 import { Route as ProductsParamsIdImport } from './routes/Products/$ParamsId'
 import { Route as OrdersOrdersRouteImport } from './routes/_Orders/Orders/route'
+import { Route as CartCartRouteImport } from './routes/_Cart/Cart/route'
 import { Route as OrderDetailsOrderDetailsOrderIdImport } from './routes/_OrderDetails/OrderDetails/$OrderId'
 
 // Create Virtual Routes
@@ -37,17 +38,17 @@ const OrderDetailsRouteRoute = OrderDetailsRouteImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const CartRouteRoute = CartRouteImport.update({
+  id: '/_Cart',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const OrderPaymentRouteRoute = OrderPaymentRouteImport.update({
   path: '/OrderPayment',
   getParentRoute: () => rootRoute,
 } as any).lazy(() =>
   import('./routes/OrderPayment/route.lazy').then((d) => d.Route),
 )
-
-const CartRouteRoute = CartRouteImport.update({
-  path: '/Cart',
-  getParentRoute: () => rootRoute,
-} as any).lazy(() => import('./routes/Cart/route.lazy').then((d) => d.Route))
 
 const IndexLazyRoute = IndexLazyImport.update({
   path: '/',
@@ -66,6 +67,13 @@ const OrdersOrdersRouteRoute = OrdersOrdersRouteImport.update({
   getParentRoute: () => OrdersRouteRoute,
 } as any).lazy(() =>
   import('./routes/_Orders/Orders/route.lazy').then((d) => d.Route),
+)
+
+const CartCartRouteRoute = CartCartRouteImport.update({
+  path: '/Cart',
+  getParentRoute: () => CartRouteRoute,
+} as any).lazy(() =>
+  import('./routes/_Cart/Cart/route.lazy').then((d) => d.Route),
 )
 
 const OrderDetailsOrderDetailsOrderIdRoute =
@@ -89,18 +97,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexLazyImport
       parentRoute: typeof rootRoute
     }
-    '/Cart': {
-      id: '/Cart'
-      path: '/Cart'
-      fullPath: '/Cart'
-      preLoaderRoute: typeof CartRouteImport
-      parentRoute: typeof rootRoute
-    }
     '/OrderPayment': {
       id: '/OrderPayment'
       path: '/OrderPayment'
       fullPath: '/OrderPayment'
       preLoaderRoute: typeof OrderPaymentRouteImport
+      parentRoute: typeof rootRoute
+    }
+    '/_Cart': {
+      id: '/_Cart'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof CartRouteImport
       parentRoute: typeof rootRoute
     }
     '/_OrderDetails': {
@@ -116,6 +124,13 @@ declare module '@tanstack/react-router' {
       fullPath: ''
       preLoaderRoute: typeof OrdersRouteImport
       parentRoute: typeof rootRoute
+    }
+    '/_Cart/Cart': {
+      id: '/_Cart/Cart'
+      path: '/Cart'
+      fullPath: '/Cart'
+      preLoaderRoute: typeof CartCartRouteImport
+      parentRoute: typeof CartRouteImport
     }
     '/_Orders/Orders': {
       id: '/_Orders/Orders'
@@ -145,8 +160,8 @@ declare module '@tanstack/react-router' {
 
 export const routeTree = rootRoute.addChildren({
   IndexLazyRoute,
-  CartRouteRoute,
   OrderPaymentRouteRoute,
+  CartRouteRoute: CartRouteRoute.addChildren({ CartCartRouteRoute }),
   OrderDetailsRouteRoute: OrderDetailsRouteRoute.addChildren({
     OrderDetailsOrderDetailsOrderIdRoute,
   }),
@@ -163,8 +178,8 @@ export const routeTree = rootRoute.addChildren({
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/Cart",
         "/OrderPayment",
+        "/_Cart",
         "/_OrderDetails",
         "/_Orders",
         "/Products/$ParamsId"
@@ -173,11 +188,14 @@ export const routeTree = rootRoute.addChildren({
     "/": {
       "filePath": "index.lazy.tsx"
     },
-    "/Cart": {
-      "filePath": "Cart/route.tsx"
-    },
     "/OrderPayment": {
       "filePath": "OrderPayment/route.tsx"
+    },
+    "/_Cart": {
+      "filePath": "_Cart/route.tsx",
+      "children": [
+        "/_Cart/Cart"
+      ]
     },
     "/_OrderDetails": {
       "filePath": "_OrderDetails/route.tsx",
@@ -190,6 +208,10 @@ export const routeTree = rootRoute.addChildren({
       "children": [
         "/_Orders/Orders"
       ]
+    },
+    "/_Cart/Cart": {
+      "filePath": "_Cart/Cart/route.tsx",
+      "parent": "/_Cart"
     },
     "/_Orders/Orders": {
       "filePath": "_Orders/Orders/route.tsx",

@@ -1,8 +1,8 @@
-import { CartQueryOptions } from "../../routes/Cart/route";
+import { CartQueryOptions } from "../../../Api/QueryOptions/QueryOptions";
 import { useQuery } from "@tanstack/react-query";
-import CartItem from "./CartItem";
-import { CartItemWithCheck } from "../../Types/types";
-import Flex from "../../ComponentsPrototype/Layout/Flex";
+import CartItem from "./Cartitem/CartItem";
+import { CartItemWithCheck } from "../../../Types/types";
+import Flex from "../../../ComponentsPrototype/Layout/Flex";
 import { ErrorBoundary } from "react-error-boundary";
 
 export const CartItemsList = () => {

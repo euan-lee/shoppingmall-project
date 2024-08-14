@@ -5,10 +5,10 @@ import { useMutation } from "@tanstack/react-query";
 import { OrderPaymentItem } from "./OrderPaymentItem";
 import { PaymentSummary } from "../../Components/Summary/PaymentSummary";
 import { OrderPaymentHeader } from "./OrderPaymentHeader";
-import { OrderPaymentLeftLayout } from "./OrderPaymentLeftLayout";
-import { OrderPaymentRightLayout } from "./OrderPaymentRightLayout";
-import { OrderPaymentBodyLayout } from "./OrderPaymentBodyLayout";
-import { OrderPaymentTopLayout } from "./OrderPaymentTopLayout";
+import { OrderPaymentLeftLayout } from "../../Layouts/OrderPayment/OrderPaymentLeftLayout";
+import { OrderPaymentRightLayout } from "../../Layouts/OrderPayment/OrderPaymentRightLayout";
+import { OrderPaymentBodyLayout } from "../../Layouts/OrderPayment/OrderPaymentBodyLayout";
+import { OrderPaymentTopLayout } from "../../Layouts/OrderPayment/OrderPaymentTopLayout";
 import { OrderPaymentRightHeader } from "./OrderPaymentRightHeader";
 
 export const OrderPaymentView = ({

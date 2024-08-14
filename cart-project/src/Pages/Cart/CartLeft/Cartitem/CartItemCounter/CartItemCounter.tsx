@@ -1,8 +1,9 @@
-import Button from "../../ComponentsPrototype/Button/Button";
-import { useCartCountMutation } from "../../Hooks/MutateCartItem/CartCountMutation";
-import Box from "../../ComponentsPrototype/Layout/Box";
-import Flex from "../../ComponentsPrototype/Layout/Flex";
-import { useCartItemDecreaseMutation } from "../../Hooks/MutateCartItem/CartCountMutation";
+import Button from "../../../../../ComponentsPrototype/Button/Button";
+import { useCartCountMutation } from "../../../../../Hooks/MutateCartItem/CartCountMutation";
+import Box from "../../../../../ComponentsPrototype/Layout/Box";
+import Flex from "../../../../../ComponentsPrototype/Layout/Flex";
+import { useCartItemDecreaseMutation } from "../../../../../Hooks/MutateCartItem/CartCountMutation";
+
 export const CartItemCounter = ({
   id,
   quantity,

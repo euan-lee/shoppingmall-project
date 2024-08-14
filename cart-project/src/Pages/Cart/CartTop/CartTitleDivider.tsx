@@ -1,5 +1,5 @@
-import Divider from "../../ComponentsPrototype/Divider/Divider";
-import Text from "../../ComponentsPrototype/Text/Text";
+import Divider from "../../../ComponentsPrototype/Divider/Divider";
+import Text from "../../../ComponentsPrototype/Text/Text";
 export const CartHeader = () => {
   return (
     <div className="flex flex-col justify-center items-center pt-5">

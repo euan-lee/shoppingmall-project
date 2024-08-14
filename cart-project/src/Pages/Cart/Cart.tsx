@@ -1,10 +1,11 @@
-import Flex from "../../ComponentsPrototype/Layout/Flex";
-import { CartView } from "./CartView";
+import { CartRight } from "./CartRight/CartRight";
+import { CartLeft } from "./CartLeft/ CartLeftComponent";
 
 export const Cart = () => {
   return (
-    <Flex className="gap-5 p-12 px-60">
-      <CartView />
-    </Flex>
+    <>
+      <CartLeft />
+      <CartRight />
+    </>
   );
 };

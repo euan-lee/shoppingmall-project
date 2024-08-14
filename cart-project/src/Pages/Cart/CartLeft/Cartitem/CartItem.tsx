@@ -1,14 +1,15 @@
-import Image from "../../ComponentsPrototype/Image/Image";
-import Text from "../../ComponentsPrototype/Text/Text";
-import CheckBox from "../../ComponentsPrototype/CheckBox/CheckBox";
-import Button from "../../ComponentsPrototype/Button/Button";
-import { useCheckMutation } from "../../Hooks/MutateCartItem/CheckMutation";
-import { CartItemWithCheck } from "../../Types/types";
-import Flex from "../../ComponentsPrototype/Layout/Flex";
-import { TrashIcon } from "../../Components/CartIcon/TrashIcon";
-import { CartItemCounter } from "./CartItemCounter";
-import Box from "../../ComponentsPrototype/Layout/Box";
-import { useCartItemDeleteMutation } from "../../Hooks/MutateCartItem/CartItemDeleteMutation";
+import Image from "../../../../ComponentsPrototype/Image/Image";
+import Text from "../../../../ComponentsPrototype/Text/Text";
+import CheckBox from "../../../../ComponentsPrototype/CheckBox/CheckBox";
+import Button from "../../../../ComponentsPrototype/Button/Button";
+import { useCheckMutation } from "../../../../Hooks/MutateCartItem/CheckMutation";
+import { CartItemWithCheck } from "../../../../Types/types";
+import Flex from "../../../../ComponentsPrototype/Layout/Flex";
+import { TrashIcon } from "../../../../Components/CartIcon/TrashIcon";
+import { CartItemCounter } from "./CartItemCounter/CartItemCounter";
+import Box from "../../../../ComponentsPrototype/Layout/Box";
+import { useCartItemDeleteMutation } from "../../../../Hooks/MutateCartItem/CartItemDeleteMutation";
+
 const CartItem = ({ item }: { item: CartItemWithCheck }) => {
   const {
     done,

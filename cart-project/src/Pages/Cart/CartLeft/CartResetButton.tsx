@@ -1,6 +1,5 @@
-import { useCartItemDeleteAllMutation } from "../../Hooks/MutateCartItem/CartItemsDeleteAllMutation";
-import Button from "../../ComponentsPrototype/Button/Button";
-
+import { useCartItemDeleteAllMutation } from "../../../Hooks/MutateCartItem/CartItemsDeleteAllMutation";
+import Button from "../../../ComponentsPrototype/Button/Button";
 export const CartResetButton = () => {
   const CartItemsDeleteAllMutation = useCartItemDeleteAllMutation();
 
