@@ -67,7 +67,8 @@ export const getCarts = async () => {
     const response = await AxiosInstance.get(URLS.getCarts());
     return response.data[0];
   } catch (error) {
-    console.log(error);
+    console.error(error);
+    throw error;
   }
 };
 
