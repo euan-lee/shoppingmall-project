@@ -25,15 +25,21 @@ interface products {
   imageUrl: string;
 }
 
-export const postProducts = async ({ price, name, imageUrl }: products) => {
+export const postProducts = async ({
+  price,
+  name,
+  imageUrl,
+}: products): Promise<boolean> => {
   try {
     await AxiosInstance.post(URLS.postProducts(), {
       price,
       name,
       imageUrl,
     });
+    return true;
   } catch (error) {
-    console.log(error);
+    console.error(error);
+    throw error;
   }
 };
 
