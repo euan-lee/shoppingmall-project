@@ -1,5 +1,6 @@
 import { AxiosInstance } from "./Axios";
 import { URLS } from "../Const/url";
+import { Product } from "../Types/types";
 
 export const getProducts = async ({
   page,
@@ -7,13 +8,14 @@ export const getProducts = async ({
 }: {
   page: number;
   limit: number;
-}) => {
+}): Promise<Product[]> => {
   try {
     const data = await AxiosInstance.get(URLS.getProducts({ page, limit }));
 
     return data.data;
   } catch (error) {
-    console.log(error);
+    console.error("Error fetching products:", error);
+    throw error;
   }
 };
 

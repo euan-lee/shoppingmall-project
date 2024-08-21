@@ -5,7 +5,6 @@ export const handlers = [
   http.get(
     import.meta.env.VITE_LOCAL_DEV + "/products",
     async ({ request }) => {
-      console.log("??들어와??");
       const url = new URL(request.url);
       const page = url.searchParams.get("page")
         ? url.searchParams.get("page")
